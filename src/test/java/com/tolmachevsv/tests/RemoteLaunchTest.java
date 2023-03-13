@@ -17,8 +17,7 @@ public class RemoteLaunchTest extends TestBase {
 
     @Test
     public void openRemotely() {
-        System.setProperty("launch", "remote");
-        System.out.println(System.getProperty("launch"));
+        System.getProperty("launch", "remote");
 
         WebConfig config = ConfigFactory.create(WebConfig.class, System.getProperties());
         Configuration.remote = format("https://%s:%s@%s", config.login(), config.password(), config.remoteUrl());

@@ -14,8 +14,7 @@ public class LocalLaunchTest extends TestBase {
 
     @Test
     public void openLocally() {
-        System.setProperty("launch", "local");
-        System.out.println(System.getProperty("launch"));
+        System.getProperty("launch", "local");
 
         WebConfig config = ConfigFactory.create(WebConfig.class, System.getProperties());
         assertThat(config.browserName()).isEqualTo("chrome");
